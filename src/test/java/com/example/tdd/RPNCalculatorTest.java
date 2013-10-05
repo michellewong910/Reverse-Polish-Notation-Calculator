@@ -82,6 +82,15 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
+	public void testNegativeDivision() {
+		String input = "-5 1 /";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal -5", -5, solution);
+	}
+
+	@Test
 	public void testFactorial() {
 		String input = "5 !";
 
@@ -100,6 +109,24 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
+	public void testPositiveAbsoluteValue() {
+		String input = "1 ABS";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
+	}
+
+	@Test
+	public void testCaseInsensitiveAbsoluteValue() {
+		String input = "1 AbS";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
+	}
+
+	@Test
 	@Ignore
 	public void testFactorial0() {
 		String input = "0 !";
@@ -110,11 +137,51 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	public void testNegativeDivision() {
-		String input = "-5 1 /";
+	@Ignore
+	public void testPi() {
+		String input = "PI";
 
 		int solution = calc.solveEquation(input);
 
-		assertEquals(input + " should equal -5", -5, solution);
+		assertEquals(input + " should equal 3", (int) Math.PI, solution);
+	}
+
+	@Test
+	@Ignore
+	public void testNegativeAbsoluteValue() {
+		String input = "-1 ABS";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
+	}
+
+	@Test
+	@Ignore
+	public void testExponent() {
+		String input = "-1 2 ^";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
+	}
+
+	@Test
+	@Ignore
+	public void testSquareRoot9() {
+		String input = "9 SQRT";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
+	}
+
+	@Test
+	public void testSquareRoot1() {
+		String input = "1 SQRT";
+
+		int solution = calc.solveEquation(input);
+
+		assertEquals(input + " should equal 1", 1, solution);
 	}
 }

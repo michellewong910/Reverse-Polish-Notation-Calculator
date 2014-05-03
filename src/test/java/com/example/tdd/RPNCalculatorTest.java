@@ -127,7 +127,6 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	@Ignore
 	public void testFactorial0() {
 		String input = "0 !";
 

@@ -46,6 +46,33 @@ public class RPNCalculator {
 				int total = factorial(operands.pop());
 				
 				operands.push(total);
+				
+			} else if (currentToken.contains("^")){
+				
+				int exponent = operands.pop();
+				int baseNum = operands.pop();
+				double total = Math.pow(baseNum,exponent);
+				operands.push((int)total);
+						
+				
+			} else if (currentToken.contains("SQRT")){
+				
+				int number = operands.pop();
+				double total = Math.sqrt(number);
+				operands.push((int)total);
+				
+				
+			} else if(currentToken.contains("ABS")){
+				Integer absNum = operands.pop();
+				
+				if (absNum<0){
+					absNum = absNum*-1;
+					
+				}
+				 operands.push(absNum);
+			} else if (currentToken.contains("PI")){
+				double roundedPi = Math.PI;
+				operands.push((int)roundedPi);
 			}
 
 		}

@@ -136,7 +136,6 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	@Ignore
 	public void testPi() {
 		String input = "PI";
 
@@ -146,7 +145,6 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	@Ignore
 	public void testNegativeAbsoluteValue() {
 		String input = "-1 ABS";
 
@@ -156,7 +154,6 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	@Ignore
 	public void testExponent() {
 		String input = "-1 2 ^";
 
@@ -166,13 +163,12 @@ public class RPNCalculatorTest {
 	}
 
 	@Test
-	@Ignore
 	public void testSquareRoot9() {
 		String input = "9 SQRT";
 
 		int solution = calc.solveEquation(input);
 
-		assertEquals(input + " should equal 1", 1, solution);
+		assertEquals(input + " should equal 3", 3, solution);
 	}
 
 	@Test
